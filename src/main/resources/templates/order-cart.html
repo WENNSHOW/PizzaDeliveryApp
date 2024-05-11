@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Cart</title>
+    <th:block th:insert="~{/fragments/header}"></th:block>
+</head>
+
+<body>
+
+<div class="row">
+    <th:block th:insert="~{/fragments/navigation}"></th:block>
+</div>
+
+<div class="row" style="font-family: Georgia, serif;">
+
+    <div class="container-cart rounded">
+
+        <h3 class="text-center mb-3" style="color: black">Cart</h3>
+
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+            <table class="custom-table table-cart text-center text-black" style="height: 68.5vh;
+                overflow: auto; width:70%; margin-left: auto; margin-right: auto;
+                border-top-left-radius:25px; border-top-right-radius: 25px;
+                 border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
+
+                <tr th:each="food:${cartProducts}" th:object="${food}">
+
+                    <td class="product-name" th:text="*{name}">Name</td>
+
+                    <td class="description" th:text="*{description}">Description</td>
+
+                    <td th:text="*{price}" class="price text-center">Price</td>
+
+                    <td>
+                        <form th:method="PATCH"
+                              th:action="@{/cart/remove/{id}(id = *{id})}"
+                              th:object="${food}">
+                            <button class="remove-button" type="submit"
+                                    style="border-color: FFDB58"
+                            >Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td style="text-align: end; color: black; font-weight: bold;">
+                        Total:
+                    </td>
+                    <td style=" text-align: center; color: black; font-weight: bold;" th:text="${productsPrice}">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="mt-2" style="margin-right: 0; margin-left: 950px;">
+            <a class="finalize-order justify-content-center" th:if="${cartProducts.size()!=0}"
+               th:href="@{/orders/finalize}">Finalize order</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <th:block th:insert="~{fragments/footer}"></th:block>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+nav .navbar-brand {
+    margin-left: 30px;
+    width: 10%;
+}
+
+nav .pizza-slice {
+    width: 35%;
+    height: 70%;
+}
+
+nav .nav-link {
+    margin-top: 0;
+    height: 40px;
+    color: #2c504a; /* check this one */
+    font-weight: bolder;
+    padding-bottom: 24px;
+    width: 100%;
+}
+
+nav .nav-link:hover {
+    color: white;
+    background-color: #B8860B; /* Dark Goldenrod */
+    border-radius: 25px;
+}
+
+nav .nav-link:focus {
+    color: white;
+    background-color: #B8860B; /* Dark Goldenrod */
+}
+
+nav .dropdown-menu {
+    background-color: #FFDB58; /* Mustard */
+}
+
+nav .dropdown-item {
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav .dropdown-item:hover {
+    color: white;
+    background-color: #B8860B; /* Dark Goldenrod */
+    border-radius: 25px;
+}
+
+nav .nav-item {
+    font-weight: 450;
+    font-size: 17px;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
+nav .collapse {
+    margin-right: 0;
+}
+
+nav .navbar-nav {
+    margin-left: 0;
+    text-align: center;
+    font-size: 70px;
+    width: 100%;
+    display: flex;
+}
+
+nav {
+    height: 60px;
+    background-color: #FFDB58; /* Mustard */
+}
+
+footer {
+    width: 80%;
+    color: #FFDB58; /* Mustard */
+    position: fixed;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 20px;
+    bottom: 0;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:insert="~{/fragments/header}"></th:block>
+    <title>Category does not exist</title>
+</head>
+
+<body style="background-color: white">
+
+<div class="container text-center text-black"
+     style="background-color: #FFDB58;
+            border-radius: 50px;
+            margin-top: 270px;
+            width: 50%;
+            font-family: Georgia, serif;">
+
+    <h1><small th:text="${category}" style="color: #B8860B"></small> doesn't exist!</h1>
+    <h1>Click <a th:href="@{/}" style="color: #B8860B">here</a> to return to the home page.</h1>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+</script>
+
+<th:block th:insert="~{fragments/footer}"></th:block>
+</body>
+</html>

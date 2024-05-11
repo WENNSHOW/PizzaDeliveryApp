@@ -1,0 +1,38 @@
+.delivery-image{
+    width: 95%;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.main-form{
+    background-color: #FFDB58; /* Mustard */
+    border-radius: 25px;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.errors-register{
+    width: 90%;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(234, 153, 153);
+}
+
+.btn{
+    background-color: white;
+    color: #424242;
+}
+
+.btn:hover{
+    background-color: #B8860B; /* Dark Goldenrod */
+    color:white;
+    transition: all 2000ms ease;
+}
+
+.form-label{
+    margin-top: 5px;
+}

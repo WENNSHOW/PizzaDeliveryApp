@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:insert="~{/fragments/header}"></th:block>
+    <title>Not found</title>
+</head>
+
+<body style="background-color: white; font-family: Georgia, serif;">
+
+<div class="container text-center"
+     style="background-color: #FFDB58; border-radius: 50px; margin-top: 250px; color: black; width: 50%">
+
+    <h1>
+        <small th:text="${resourceName}"></small> not found with <small th:text="${fieldName}"></small> : <small th:text="${fieldValueString}"></small>
+        Click <a th:href="@{/}" style="color: #B8860B">here</a>
+        to return to the home page.
+    </h1>
+</div>
+
+<th:block th:insert="~{fragments/footer}"></th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

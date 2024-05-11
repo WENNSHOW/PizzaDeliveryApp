@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Menu</title>
+    <th:block th:insert="~{/fragments/header}"></th:block>
+</head>
+
+<body>
+
+<div>
+    <th:block th:insert="~{/fragments/navigation}"></th:block>
+</div>
+
+<div class="container" style="font-family: Georgia, serif;">
+
+    <div class="row">
+
+        <div class="col">
+            <div class="card">
+                <img src="/images/pizza.jpeg" class="card-img" alt="pizza image">
+                <h5 class="card-title mb-1 mt-2">Pizza</h5>
+                <a th:href="@{/menu/{category}(category = 'pizza')}"
+                   class="navigate-to mb-1">Explore pizzas</a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+
+                <img src="/images/tortilla.jpg" class="card-img" alt="pizza image">
+
+                <h5 class="card-title mb-1 mt-2">Tortilla</h5>
+                <a th:href="@{/menu/{category}(category = 'tortilla')}" class="navigate-to mb-1">Explore tortillas</a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <img src="/images/burger.jpg" class="card-img" alt="pizza image">
+                <h5 class="card-title mb-1 mt-2">Burgers</h5>
+                <a th:href="@{/menu/{category}(category = 'burger')}" class="navigate-to mb-1">Explore burgers</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="card">
+                <img src="/images/fries.jpg" class="card-img" alt="pizza image">
+                <h5 class="card-title mb-1 mt-2">French fries</h5>
+                <a th:href="@{/menu/{category}(category = 'fries')}" class="navigate-to mb-1">Explore french fries</a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <img src="/images/dessert.jpg" class="card-img" alt="pizza image">
+                <h5 class="card-title mb-1 mt-2">Deserts</h5>
+                <a th:href="@{/menu/{category}(category = 'dessert')}" class="navigate-to mb-1">Explore deserts</a>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <img src="/images/kola.jpg" class="card-img" alt="pizza image">
+                <h5 class="card-title mb-1 mt-2">Drinks</h5>
+                <a th:href="@{/menu/{category}(category = 'drink')}" class="navigate-to mb-1">Explore drinks</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<th:block th:insert="~{fragments/footer}"></th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

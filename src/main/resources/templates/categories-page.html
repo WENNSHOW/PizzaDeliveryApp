@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <title th:text="|Menu - ${category}|"></title>
+    <th:block th:insert="~{/fragments/header}"></th:block>
+</head>
+
+<body>
+
+<div>
+    <th:block th:insert="~{/fragments/navigation}"></th:block>
+</div>
+
+<div class="container"
+     style="background-color: #FFDB58;
+            border-radius: 25px;
+            font-family: Georgia, serif;
+            width: 80%;
+            margin-bottom: 60px;">
+
+    <h1 th:text="${#strings.capitalize(category)}" class="category-heading text-center text-black"></h1>
+
+    <table id="dtBasicExample" class="products-table"
+           style="width: 90%; margin-right: auto; margin-left: auto; margin-bottom: 0">
+
+        <tbody>
+        <tr class="row mb-2 mt-2 text-black" th:each="product : ${products}">
+
+            <td th:text="*{product.name}" style="font-weight: bold">Cheeseburger</td>
+
+            <td th:text="|*{product.price} &dollar;|">Price</td>
+            <td th:text="|*{product.description}|">Description</td>
+
+            <td sec:authorize="isAuthenticated() && !hasAnyAuthority('ROLE_ADMIN','ROLE_WORKER')"
+                style="margin-bottom:10px">
+
+                <form th:method="PATCH"
+                      th:action="@{/cart/add/{id}(id=${product.id})}"
+                      th:object="${product}">
+                    <button class="order-button text-center text-decoration-none" type="submit"
+                    >Add to cart
+                    </button>
+                </form>
+
+            </td>
+
+            <td sec:authorize="hasAuthority('ROLE_ADMIN')" style="margin-bottom:10px">
+                <a class="order-button text-center text-decoration-none"
+                   th:href="@{/products/edit/{id}(id=${product.id})}"
+                >Edit product</a>
+            </td>
+
+            <td sec:authorize="hasAuthority('ROLE_ADMIN')" style="margin-bottom:10px">
+
+                <form th:method="delete"
+                      th:action="@{/products/delete/{id}(id=${product.id})}"
+                      th:object="${product}">
+                    <button class="order-button text-center text-decoration-none"
+                            type="submit" style="border-color: white"
+                    >Remove product
+                    </button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<th:block th:insert="~{fragments/footer}"></th:block>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

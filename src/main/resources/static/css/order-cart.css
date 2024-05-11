@@ -1,0 +1,67 @@
+body {
+    background-color: white;
+}
+
+.remove-button {
+    border-radius: 25px;
+    border-style: none;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    display: flex;
+}
+
+.price, .product-name {
+    width: 15%;
+}
+
+.description {
+    width: 55%;
+}
+
+.remove-button:hover {
+    background-color: #B8860B; /* Dark Goldenrod */
+    color: white;
+    transition: all 2000ms ease;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    overflow: auto;
+}
+
+.custom-table {
+    background-color: #FFDB58; /* Mustard */
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.container-cart {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.finalize-order {
+    margin-right: 200px;
+    margin-left: 140px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: #FFDB58; /* Mustard */
+    color: black;
+    text-decoration: none;
+    display: flex;
+    width: 50%;
+}
+
+.finalize-order:hover {
+    background-color: #B8860B; /* Dark Goldenrod */
+    color: white;
+    transition: all 2000ms ease;
+}
+
+.button-detail-all:hover{
+    background-color: #B8860B; /* Dark Goldenrod */
+    color: white;
+}

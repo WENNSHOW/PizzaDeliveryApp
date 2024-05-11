@@ -1,0 +1,22 @@
+.profile-form{
+    margin-top: 200px;
+}
+
+.main-card{
+    width: 100%;
+}
+
+.edit-button-a{
+    background-color: white;
+    width: 50%;
+    color: black;
+    border-color: #B8860B; /* Dark Goldenrod */
+    border-radius: 25px;
+    font-size: large;
+}
+
+.edit-button-a:hover{
+    background-color: #B8860B; /* Dark Goldenrod */
+    color: white;
+    transition: all 2000ms ease;
+}

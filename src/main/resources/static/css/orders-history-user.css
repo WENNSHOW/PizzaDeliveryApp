@@ -1,0 +1,22 @@
+.container {
+    padding: 2rem 0rem;
+}
+
+h4 {
+    margin: 2rem 0rem 1rem;
+}
+
+.button-detail{
+    background-color: #FFDB58; /* Mustard */
+    color: black;
+    width: 70%;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-detail:hover{
+    background-color: #B8860B; /* Dark Goldenrod */
+    color: white;
+    transition: all 2000ms ease;
+}
