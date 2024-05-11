@@ -6,13 +6,15 @@ services:
     container_name: mysql
     restart: always
     environment:
-      MYSQL_PASSWORD: VfS225Yn225
-      MYSQL_ROOT_PASSWORD: VfS225Yn225
-      MYSQL_DB: pizzaapp
+      MYSQL_DATABASE: pizzaapp
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ${your_pass}
+      MYSQL_ROOT_HOST: localhost
     ports:
-      - "3307:3306"
+      - "3307:3307"
     volumes:
-      - ./data:/var/lib/mysql/data
+      - ./data:/var/lib/mysql
+      - ./PizzaApp/src/main/resources/data.sql:/docker-entrypoint-initdb.d
 
   app:
     build: .
@@ -25,4 +27,4 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/pizzaapp
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: VfS225Yn225
+      SPRING_DATASOURCE_PASSWORD: ${your_pass}
